@@ -3,7 +3,7 @@
 root_dir="$HOME/data/KITTI/"   #your path to kitti dataset
 bash_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 label_dir="label_2car"                #path to labels of car
-name="image_2"
+name="images"
 for dataset in training testing
 do
   dst_file=$bash_dir/$dataset.txt
@@ -17,12 +17,12 @@ do
 
   img_file=$bash_dir/$dataset"_img.txt"
   cp $dataset_file $img_file
-  sed -i "s/^/training\/$name\//g" $img_file
+  sed -i "s/^/$name\//g" $img_file
   sed -i "s/$/.png/g" $img_file
 
   label_file=$bash_dir/$dataset"_label.txt"
   cp $dataset_file $label_file
-  sed -i "s/^/training\/$label_dir\/xml\//g" $label_file
+  sed -i "s/^/$label_dir\/xml\//g" $label_file
   sed -i "s/$/.xml/g" $label_file
 
   paste -d' ' $img_file $label_file >> $dst_file

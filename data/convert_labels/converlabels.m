@@ -1,11 +1,11 @@
 %%%convert the kitti type labels to voc type labels
 currentFolder = pwd;
 addpath(genpath(currentFolder));
-root_dir = '/your/path/to/KITTI/';
+root_dir = '/home/isam/data/KITTI/';
 img_type = '.png';
-img_dir = [root_dir 'training/image_2/'];
-txt_dir = [root_dir 'training/label_2car/'];
-xml_dir = [root_dir 'training/label_2car/xml/'];
+img_dir = [root_dir 'images/'];
+txt_dir = [root_dir 'labels/'];
+xml_dir = [root_dir 'labels/xml/'];
 
 if ~exist(xml_dir,'dir')
     mkdir(xml_dir);
