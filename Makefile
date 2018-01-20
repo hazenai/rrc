@@ -179,7 +179,7 @@ ifneq ($(CPU_ONLY), 1)
 endif
 
 LIBRARIES +=  glog gflags protobuf leveldb snappy \
-  lmdb boost_system boost_filesystem hdf5_hl hdf5 m \
+  lmdb boost_system boost_filesystem boost_thread stdc++ boost_regex hdf5_hl hdf5 m \
   opencv_core opencv_highgui opencv_imgproc opencv_imgcodecs opencv_videoio
 
 # handle IO dependencies
